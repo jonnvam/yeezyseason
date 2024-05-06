@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "370530363936",
+    "project_id": "logistudied",
+    "storage_bucket": "logistudied.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370530363936:android:51bb087be116a2360c2a45",
+        "android_client_info": {
+          "package_name": "com.logist.logistudied"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqoTI6GUAE_85MUbbRx8bz0JlqsZ6S0Yc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
