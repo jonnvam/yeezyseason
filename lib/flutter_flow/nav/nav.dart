@@ -151,6 +151,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Planet',
           path: '/planet',
           builder: (context, params) => const PlanetWidget(),
+        ),
+        FFRoute(
+          name: 'forgotContra',
+          path: '/forgotContra',
+          builder: (context, params) => const ForgotContraWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

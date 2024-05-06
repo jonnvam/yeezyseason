@@ -47,7 +47,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF1F232A),
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
           child: Row(
@@ -58,8 +58,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                 child: Container(
                   width: 100.0,
                   height: double.infinity,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF1F232A),
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   alignment: const AlignmentDirectional(0.0, -1.0),
                   child: SingleChildScrollView(
@@ -70,9 +70,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                         Container(
                           width: double.infinity,
                           height: 140.0,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFF1B2026),
-                            borderRadius: BorderRadius.only(
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(16.0),
                               bottomRight: Radius.circular(16.0),
                               topLeft: Radius.circular(0.0),
@@ -89,7 +89,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   .displaySmall
                                   .override(
                                     fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context).accent4,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -109,7 +110,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       .displaySmall
                                       .override(
                                         fontFamily: 'Outfit',
-                                        color: const Color(0xCCFFFFFF),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -353,6 +355,55 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         children: [
                                           const TextSpan(
                                             text: 'No tienes cuenta? ',
+                                            style: TextStyle(),
+                                          ),
+                                          TextSpan(
+                                            text: 'Haz clic aqui',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          )
+                                        ],
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+
+                                // You will have to add an action on this rich text to go to your login page.
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 12.0, 0.0, 12.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('forgotContra');
+                                    },
+                                    child: RichText(
+                                      textScaler:
+                                          MediaQuery.of(context).textScaler,
+                                      text: TextSpan(
+                                        children: [
+                                          const TextSpan(
+                                            text: 'Restablecer contraseña ',
                                             style: TextStyle(),
                                           ),
                                           TextSpan(

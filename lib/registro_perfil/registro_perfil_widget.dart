@@ -55,7 +55,7 @@ class _RegistroPerfilWidgetState extends State<RegistroPerfilWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF1F232A),
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
           child: Row(
@@ -66,8 +66,8 @@ class _RegistroPerfilWidgetState extends State<RegistroPerfilWidget> {
                 child: Container(
                   width: 100.0,
                   height: double.infinity,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF1F232A),
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   alignment: const AlignmentDirectional(0.0, -1.0),
                   child: SingleChildScrollView(
@@ -78,9 +78,9 @@ class _RegistroPerfilWidgetState extends State<RegistroPerfilWidget> {
                         Container(
                           width: double.infinity,
                           height: 140.0,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFF1B2026),
-                            borderRadius: BorderRadius.only(
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(16.0),
                               bottomRight: Radius.circular(16.0),
                               topLeft: Radius.circular(0.0),
@@ -92,12 +92,13 @@ class _RegistroPerfilWidgetState extends State<RegistroPerfilWidget> {
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 32.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'LogiStudied',
+                              'LogiStudio',
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
                                     fontFamily: 'Outfit',
-                                    color: const Color(0xCCFFFFFF),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -117,7 +118,8 @@ class _RegistroPerfilWidgetState extends State<RegistroPerfilWidget> {
                                       .displaySmall
                                       .override(
                                         fontFamily: 'Outfit',
-                                        color: const Color(0xCCFFFFFF),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         letterSpacing: 0.0,
                                       ),
                                 ),

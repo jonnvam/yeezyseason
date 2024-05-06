@@ -205,7 +205,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF1F232A),
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
           child: SizedBox(
@@ -230,7 +230,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: MediaQuery.sizeOf(context).height * 0.45,
                             decoration: const BoxDecoration(
-                              color: Color(0xADDBDB86),
+                              color: Color(0xADE07E56),
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(180.0),
                                 bottomRight: Radius.circular(180.0),
@@ -330,17 +330,17 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                               child: SelectionArea(
                                                   child: Text(
                                                 'JavaScript es un lenguaje de programación ampliamente utilizado en la web para crear interactividad y dinamismo en las páginas.',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                               )),
                                             ),
                                           ],
@@ -372,7 +372,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                                     fontFamily: 'Readex Pro',
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryText,
                                                     letterSpacing: 0.0,
                                                   ),
                                             )),
@@ -384,7 +384,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
-                                                    color: const Color(0xADDBDB86),
+                                                    color: const Color(0xADE07E56),
                                                     letterSpacing: 0.0,
                                                   ),
                                             )),
@@ -410,15 +410,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Usuarios estimados: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -428,7 +429,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
-                                                    color: const Color(0xADDBDB86),
+                                                    color: const Color(0xADE07E56),
                                                     letterSpacing: 0.0,
                                                   ),
                                             )),
@@ -461,7 +462,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                                     fontFamily: 'Readex Pro',
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryText,
                                                     letterSpacing: 0.0,
                                                   ),
                                             )),
@@ -473,7 +474,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
-                                                    color: const Color(0xADDBDB86),
+                                                    color: const Color(0xADE07E56),
                                                     letterSpacing: 0.0,
                                                   ),
                                             )),
@@ -499,25 +500,26 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Porcentaje de uso: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            )),
-                                            SelectionArea(
-                                                child: Text(
-                                              '95&',
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
-                                                    color: const Color(0xADDBDB86),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                            )),
+                                            SelectionArea(
+                                                child: Text(
+                                              '95%',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: const Color(0xADE07E56),
                                                     letterSpacing: 0.0,
                                                   ),
                                             )),
@@ -543,7 +545,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Readex Pro',
-                                            color: const Color(0xADDBDB86),
+                                            color: const Color(0xADE07E56),
                                             letterSpacing: 0.0,
                                           ),
                                     )),
@@ -552,9 +554,10 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                       borderRadius: 30.0,
                                       borderWidth: 1.0,
                                       buttonSize: 60.0,
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.arrow_upward_rounded,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 30.0,
                                       ),
                                       onPressed: () async {
@@ -582,9 +585,10 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                       borderRadius: 30.0,
                                       borderWidth: 1.0,
                                       buttonSize: 60.0,
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.arrow_downward_rounded,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 30.0,
                                       ),
                                       onPressed: () async {
@@ -640,7 +644,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: MediaQuery.sizeOf(context).height * 0.45,
                             decoration: const BoxDecoration(
-                              color: Color(0xFFE9412B),
+                              color: Color(0xD4B6B03E),
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(180.0),
                                 bottomRight: Radius.circular(180.0),
@@ -749,15 +753,17 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                               child: SelectionArea(
                                                   child: Text(
                                                 'Python es un lenguaje versátil y fácil de aprender, utilizado en diversas áreas como desarrollo web, científico y automatización.',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                               )),
                                             ),
                                           ],
@@ -782,15 +788,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Año de creacion:  ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -800,7 +807,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
-                                                    color: const Color(0xFFE9412B),
+                                                    color: const Color(0xD4B6B03E),
                                                     letterSpacing: 0.0,
                                                   ),
                                             )),
@@ -826,15 +833,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Usuarios estimados: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -844,7 +852,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
-                                                    color: const Color(0xFFE9412B),
+                                                    color: const Color(0xD4B6B03E),
                                                     letterSpacing: 0.0,
                                                   ),
                                             )),
@@ -870,15 +878,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Nivel de prestigio: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -888,7 +897,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
-                                                    color: const Color(0xFFE9412B),
+                                                    color: const Color(0xD4B6B03E),
                                                     letterSpacing: 0.0,
                                                   ),
                                             )),
@@ -914,15 +923,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Porcentaje de uso: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -932,7 +942,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
-                                                    color: const Color(0xFFE9412B),
+                                                    color: const Color(0xD4B6B03E),
                                                     letterSpacing: 0.0,
                                                   ),
                                             )),
@@ -958,7 +968,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Readex Pro',
-                                            color: const Color(0xFFE9412B),
+                                            color: const Color(0xD4B6B03E),
                                             letterSpacing: 0.0,
                                           ),
                                     )),
@@ -967,9 +977,10 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                       borderRadius: 30.0,
                                       borderWidth: 1.0,
                                       buttonSize: 60.0,
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.arrow_upward_rounded,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 30.0,
                                       ),
                                       onPressed: () async {
@@ -996,9 +1007,10 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                       borderRadius: 30.0,
                                       borderWidth: 1.0,
                                       buttonSize: 60.0,
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.arrow_downward_rounded,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 30.0,
                                       ),
                                       onPressed: () async {
@@ -1137,15 +1149,17 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                               child: SelectionArea(
                                                   child: Text(
                                                 'HTML es un lenguaje de marcado utilizado para estructurar el contenido y crear páginas web, permitiendo definir la estructura y el formato de los elementos en un documento web.',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                               )),
                                             ),
                                           ],
@@ -1170,15 +1184,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Año de creacion:  ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -1214,15 +1229,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Usuarios estimados: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -1258,15 +1274,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Nivel de prestigio: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -1302,15 +1319,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Porcentaje de uso: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -1355,9 +1373,10 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                       borderRadius: 30.0,
                                       borderWidth: 1.0,
                                       buttonSize: 60.0,
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.arrow_upward_rounded,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 30.0,
                                       ),
                                       onPressed: () async {
@@ -1384,9 +1403,10 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                       borderRadius: 30.0,
                                       borderWidth: 1.0,
                                       buttonSize: 60.0,
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.arrow_downward_rounded,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 30.0,
                                       ),
                                       onPressed: () async {
@@ -1522,15 +1542,17 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                               child: SelectionArea(
                                                   child: Text(
                                                 'C# es un lenguaje de programación versátil y potente, desarrollado por Microsoft para una amplia gama de aplicaciones.',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                               )),
                                             ),
                                           ],
@@ -1555,15 +1577,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Año de creacion:  ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -1599,15 +1622,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Usuarios estimados: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -1643,15 +1667,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Nivel de prestigio: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -1687,15 +1712,16 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             SelectionArea(
                                                 child: Text(
                                               'Porcentaje de uso: ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             )),
                                             SelectionArea(
                                                 child: Text(
@@ -1740,9 +1766,10 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                       borderRadius: 30.0,
                                       borderWidth: 1.0,
                                       buttonSize: 60.0,
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.arrow_upward_rounded,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 30.0,
                                       ),
                                       onPressed: () async {
@@ -1769,9 +1796,10 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                       borderRadius: 30.0,
                                       borderWidth: 1.0,
                                       buttonSize: 60.0,
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.arrow_downward_rounded,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 30.0,
                                       ),
                                       onPressed: () async {

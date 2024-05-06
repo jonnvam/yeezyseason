@@ -63,7 +63,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF1F232A),
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
           backgroundColor: const Color(0x1AFFFFFF),
           automaticallyImplyLeading: false,
@@ -72,9 +72,9 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
-              color: Colors.white,
+              color: FlutterFlowTheme.of(context).primaryText,
               size: 30.0,
             ),
             onPressed: () async {
@@ -85,7 +85,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
             'Agregar Quiz',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
-                  color: Colors.white,
+                  color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 22.0,
                   letterSpacing: 0.0,
                 ),
@@ -114,7 +114,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                         topRight: Radius.circular(12.0),
                       ),
                       border: Border.all(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: FlutterFlowTheme.of(context).primaryText,
                       ),
                     ),
                     child: Padding(
@@ -134,13 +134,13 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           hintText: 'Escribe la pregunta',
-                          hintStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    letterSpacing: 0.0,
-                                  ),
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: 'Readex Pro',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
+                              ),
                           enabledBorder: InputBorder.none,
                           focusedBorder: InputBorder.none,
                           errorBorder: InputBorder.none,
@@ -148,8 +148,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
                             ),
                         maxLines: null,
@@ -191,7 +190,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                     ),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                     ),
                                   ),
                                   child: Padding(
@@ -281,7 +280,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                           .override(
                                             fontFamily: 'Readex Pro',
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                                .primaryText,
                                             letterSpacing: 0.0,
                                           ),
                                       maxLines: null,
@@ -308,7 +307,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                     ),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                     ),
                                   ),
                                   child: Theme(
@@ -321,7 +320,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       ),
                                       unselectedWidgetColor:
                                           FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .primaryText,
                                     ),
                                     child: Checkbox(
                                       value: _model.checkboxValue1 ??= false,
@@ -341,7 +340,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       side: BorderSide(
                                         width: 2,
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .primaryText,
                                       ),
                                       activeColor:
                                           FlutterFlowTheme.of(context).primary,
@@ -379,7 +378,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                     ),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                     ),
                                   ),
                                   child: Padding(
@@ -496,7 +495,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                     ),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                     ),
                                   ),
                                   child: Theme(
@@ -509,7 +508,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       ),
                                       unselectedWidgetColor:
                                           FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .primaryText,
                                     ),
                                     child: Checkbox(
                                       value: _model.checkboxValue2 ??= false,
@@ -529,7 +528,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       side: BorderSide(
                                         width: 2,
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .primaryText,
                                       ),
                                       activeColor:
                                           FlutterFlowTheme.of(context).primary,
@@ -567,7 +566,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                     ),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                     ),
                                   ),
                                   child: Padding(
@@ -684,7 +683,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                     ),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                     ),
                                   ),
                                   child: Theme(
@@ -697,7 +696,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       ),
                                       unselectedWidgetColor:
                                           FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .primaryText,
                                     ),
                                     child: Checkbox(
                                       value: _model.checkboxValue3 ??= false,
@@ -717,7 +716,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       side: BorderSide(
                                         width: 2,
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .primaryText,
                                       ),
                                       activeColor:
                                           FlutterFlowTheme.of(context).primary,
@@ -738,6 +737,12 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                           width: double.infinity,
                           decoration: const BoxDecoration(
                             color: Colors.transparent,
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(8.0),
+                              bottomRight: Radius.circular(8.0),
+                              topLeft: Radius.circular(8.0),
+                              topRight: Radius.circular(8.0),
+                            ),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -755,7 +760,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                     ),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                     ),
                                   ),
                                   child: Padding(
@@ -872,7 +877,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                     ),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryText,
                                     ),
                                   ),
                                   child: Theme(
@@ -885,7 +890,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       ),
                                       unselectedWidgetColor:
                                           FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .primaryText,
                                     ),
                                     child: Checkbox(
                                       value: _model.checkboxValue4 ??= false,
@@ -905,7 +910,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       side: BorderSide(
                                         width: 2,
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .primaryText,
                                       ),
                                       activeColor:
                                           FlutterFlowTheme.of(context).primary,
@@ -1014,11 +1019,12 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
+                                color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
                               ),
                       elevation: 0.0,
-                      borderSide: const BorderSide(
-                        color: Colors.transparent,
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primaryText,
                         width: 0.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),

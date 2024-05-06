@@ -125,7 +125,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF1F232A),
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
           child: Column(
@@ -144,7 +144,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget>
                       fillColor: const Color(0x1AFFFFFF),
                       icon: Icon(
                         Icons.close,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 24.0,
                       ),
                       onPressed: () async {
@@ -179,8 +179,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget>
                       'Felicidades',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 36.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w900,
@@ -210,11 +209,15 @@ class _ScorePageWidgetState extends State<ScorePageWidget>
                                 ((widget.scoreArchivo!) * 50).toString(),
                                 '0',
                               ),
-                              style: const TextStyle(),
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
                             ),
-                            const TextSpan(
+                            TextSpan(
                               text: ' puntos',
-                              style: TextStyle(),
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
                             )
                           ],
                           style:
@@ -259,20 +262,26 @@ class _ScorePageWidgetState extends State<ScorePageWidget>
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
-                            const TextSpan(
+                            TextSpan(
                               text: ' de ',
-                              style: TextStyle(),
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
                             ),
                             TextSpan(
                               text: valueOrDefault<String>(
                                 widget.totalQuestions?.toString(),
                                 '0',
                               ),
-                              style: const TextStyle(),
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
                             ),
-                            const TextSpan(
+                            TextSpan(
                               text: ' son correctos',
-                              style: TextStyle(),
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
                             )
                           ],
                           style:

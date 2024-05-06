@@ -8,3 +8,4 @@ export '/create_quiz_set/create_quiz_set_widget.dart' show CreateQuizSetWidget;
 export '/add_quiz/add_quiz_widget.dart' show AddQuizWidget;
 export '/home_page/home_page_widget.dart' show HomePageWidget;
 export '/planet/planet_widget.dart' show PlanetWidget;
+export '/forgot_contra/forgot_contra_widget.dart' show ForgotContraWidget;

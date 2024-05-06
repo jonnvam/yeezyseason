@@ -54,9 +54,9 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
     return Container(
       width: double.infinity,
       height: 120.0,
-      decoration: const BoxDecoration(
-        color: Color(0x16FFFFFF),
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: FlutterFlowTheme.of(context).secondaryBackground,
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(12.0),
           bottomRight: Radius.circular(12.0),
           topLeft: Radius.circular(12.0),
@@ -71,9 +71,9 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
             child: Container(
               width: 72.0,
               height: double.infinity,
-              decoration: const BoxDecoration(
-                color: Color(0x1EFFFFFF),
-                borderRadius: BorderRadius.only(
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).primaryText,
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(12.0),
                   bottomRight: Radius.circular(12.0),
                   topLeft: Radius.circular(12.0),
@@ -119,8 +119,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                         maxLines: 2,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
                             ),
                       ),
@@ -133,14 +132,14 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                             'descripcion',
                           ),
                           maxLines: 2,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Readex Pro',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                fontSize: 12.0,
+                                letterSpacing: 0.0,
+                              ),
                         ),
                       ),
                     ],
@@ -148,9 +147,9 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.equalizer,
-                        color: Colors.white,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 14.0,
                       ),
                       Padding(
@@ -184,8 +183,8 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Outfit',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 11.0,
                                   letterSpacing: 0.0,
                                 ),

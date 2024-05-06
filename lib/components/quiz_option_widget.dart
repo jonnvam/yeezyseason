@@ -107,7 +107,7 @@ class _QuizOptionWidgetState extends State<QuizOptionWidget> {
               } else if (_model.isAnswered == false) {
                 return const Color(0x34FF0000);
               } else {
-                return Colors.transparent;
+                return FlutterFlowTheme.of(context).secondaryBackground;
               }
             }(),
             Colors.transparent,
@@ -126,7 +126,7 @@ class _QuizOptionWidgetState extends State<QuizOptionWidget> {
                 } else if (_model.isAnswered == false) {
                   return const Color(0xFFFF0000);
                 } else {
-                  return Colors.white;
+                  return FlutterFlowTheme.of(context).primaryText;
                 }
               }(),
               Colors.white,
@@ -179,7 +179,7 @@ class _QuizOptionWidgetState extends State<QuizOptionWidget> {
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Readex Pro',
-                          color: Colors.white,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -194,7 +194,7 @@ class _QuizOptionWidgetState extends State<QuizOptionWidget> {
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Readex Pro',
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         letterSpacing: 0.0,
                       ),
                 ),

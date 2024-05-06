@@ -55,7 +55,7 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF1F232A),
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
           backgroundColor: const Color(0x1AFFFFFF),
           automaticallyImplyLeading: false,
@@ -64,9 +64,9 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
-              color: Colors.white,
+              color: FlutterFlowTheme.of(context).primaryText,
               size: 30.0,
             ),
             onPressed: () async {
@@ -77,7 +77,7 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
             'Crear conjunto',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
-                  color: Colors.white,
+                  color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 22.0,
                   letterSpacing: 0.0,
                 ),
@@ -180,8 +180,7 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                                 topRight: Radius.circular(12.0),
                               ),
                               border: Border.all(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: FlutterFlowTheme.of(context).primaryText,
                               ),
                             ),
                             child: Column(
@@ -206,6 +205,8 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                                         .titleSmall
                                         .override(
                                           fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -223,7 +224,8 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                           width: double.infinity,
                           height: 144.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x0066737D),
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                             borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(12.0),
                               bottomRight: Radius.circular(12.0),
@@ -231,8 +233,7 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                               topRight: Radius.circular(12.0),
                             ),
                             border: Border.all(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: FlutterFlowTheme.of(context).primaryText,
                             ),
                           ),
                           child: Padding(
@@ -276,8 +277,8 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                 ),
                             hintText: 'Añade titulo',
@@ -285,12 +286,13 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Colors.white,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Colors.white,
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primaryText,
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
@@ -318,13 +320,13 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Readex Pro',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
+                              ),
                           validator: _model.textController1Validator
                               .asValidator(context),
                         ),
@@ -342,7 +344,8 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Colors.white,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                 ),
                             hintText: 'Añade descripcion',
@@ -350,12 +353,13 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Colors.white,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Colors.white,
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primaryText,
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
@@ -383,13 +387,13 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Readex Pro',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
+                              ),
                           validator: _model.textController2Validator
                               .asValidator(context),
                         ),
@@ -407,7 +411,8 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Colors.white,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                 ),
                             hintText: 'Duracion',
@@ -415,12 +420,13 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Colors.white,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Colors.white,
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primaryText,
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
@@ -448,13 +454,13 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Readex Pro',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
+                              ),
                           keyboardType: TextInputType.number,
                           validator: _model.textController3Validator
                               .asValidator(context),
@@ -498,12 +504,14 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                                 24.0, 0.0, 24.0, 0.0),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: const Color(0x1AFFFFFF),
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Colors.white,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 0.0,
@@ -528,7 +536,7 @@ class _CreateQuizSetWidgetState extends State<CreateQuizSetWidget> {
                         'Crear quiz',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
-                              color: Colors.white,
+                              color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
                             ),
                       ),

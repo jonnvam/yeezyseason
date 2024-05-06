@@ -74,7 +74,7 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: const Color(0xFF1F232A),
+            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -95,7 +95,7 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: const Color(0xFF1F232A),
+            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             body: SafeArea(
               top: true,
               child: Column(
@@ -138,7 +138,7 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                                       Icon(
                                         Icons.access_time,
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .primaryText,
                                         size: 24.0,
                                       ),
                                       Padding(
@@ -168,7 +168,7 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                                                 fontFamily: 'Outfit',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                        .primaryText,
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -201,7 +201,10 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                                   (_model.pageNavigate + 1).toString(),
                                   '0',
                                 ),
-                                style: const TextStyle(),
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
                               )
                             ],
                             style: FlutterFlowTheme.of(context)
@@ -220,8 +223,7 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                             children: [
                               Icon(
                                 Icons.grid_view,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: FlutterFlowTheme.of(context).primaryText,
                                 size: 24.0,
                               ),
                             ],
@@ -237,8 +239,8 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                       child: Container(
                         width: double.infinity,
                         height: 100.0,
-                        decoration: const BoxDecoration(
-                          color: Color(0x1AFFFFFF),
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).alternate,
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -327,9 +329,10 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                                                       .override(
                                                         fontFamily:
                                                             'Readex Pro',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -642,14 +645,16 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 16.0, 0.0),
                                       child: FlutterFlowIconButton(
+                                        borderColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
                                         borderRadius: 12.0,
                                         borderWidth: 1.0,
                                         buttonSize: 60.0,
-                                        fillColor: const Color(0x1AFFFFFF),
                                         icon: Icon(
                                           Icons.arrow_back_ios_sharp,
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
                                           size: 24.0,
                                         ),
                                         onPressed: () async {
@@ -695,20 +700,20 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                                           iconPadding:
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
-                                          color: const Color(0x1AFFFFFF),
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: Colors.white,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
+                                          color: const Color(0x00FFFFFF),
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.normal,
+                                              ),
                                           elevation: 3.0,
                                           borderSide: const BorderSide(
-                                            color: Colors.transparent,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -749,16 +754,17 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: const Color(0x1AFFFFFF),
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: Colors.white,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.normal,
+                                              ),
                                           elevation: 3.0,
                                           borderSide: const BorderSide(
                                             color: Colors.transparent,
