@@ -125,7 +125,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF041538),
+        backgroundColor: const Color(0xFF1F232A),
         body: SafeArea(
           top: true,
           child: Column(
@@ -213,7 +213,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget>
                               style: const TextStyle(),
                             ),
                             const TextSpan(
-                              text: 'puntos',
+                              text: ' puntos',
                               style: TextStyle(),
                             )
                           ],
@@ -260,7 +260,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget>
                                   ),
                             ),
                             const TextSpan(
-                              text: 'de ',
+                              text: ' de ',
                               style: TextStyle(),
                             ),
                             TextSpan(
@@ -271,7 +271,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget>
                               style: const TextStyle(),
                             ),
                             const TextSpan(
-                              text: 'son correctos',
+                              text: ' son correctos',
                               style: TextStyle(),
                             )
                           ],

@@ -96,11 +96,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const SplashWidget(),
         ),
         FFRoute(
-          name: 'quiz',
-          path: '/quiz',
-          builder: (context, params) => const QuizWidget(),
-        ),
-        FFRoute(
           name: 'QuizPage',
           path: '/quizPage',
           builder: (context, params) => QuizPageWidget(
@@ -151,6 +146,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'HomePage',
           path: '/homePage',
           builder: (context, params) => const HomePageWidget(),
+        ),
+        FFRoute(
+          name: 'Planet',
+          path: '/planet',
+          builder: (context, params) => const PlanetWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

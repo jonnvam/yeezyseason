@@ -63,7 +63,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF041538),
+        backgroundColor: const Color(0xFF1F232A),
         appBar: AppBar(
           backgroundColor: const Color(0x1AFFFFFF),
           automaticallyImplyLeading: false,

@@ -141,7 +141,7 @@ class _SplashWidgetState extends State<SplashWidget> {
                                         24.0, 0.0, 24.0, 0.0),
                                     iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0x01AFFFFF),
+                                    color: const Color(0x1AFFFFFF),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -149,9 +149,9 @@ class _SplashWidgetState extends State<SplashWidget> {
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),
-                                    elevation: 3.0,
+                                    elevation: 2.0,
                                     borderSide: const BorderSide(
-                                      color: Colors.transparent,
+                                      color: Colors.white,
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(14.0),

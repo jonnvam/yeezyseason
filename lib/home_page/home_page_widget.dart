@@ -102,7 +102,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF041538),
+        backgroundColor: const Color(0xFF1F232A),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
             context.pushNamed('CreateQuizSet');
@@ -125,7 +125,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 0.2,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF041538),
+                  color: const Color(0xFF1B2026),
                   border: Border.all(
                     color: Colors.black,
                   ),
@@ -212,202 +212,108 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 0.65,
                 decoration: const BoxDecoration(
-                  color: Color(0xFF041538),
+                  color: Color(0xFF1B2026),
                 ),
                 child: ListView(
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.vertical,
                   children: [
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, -1.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          setState(() {});
-                          if (scaffoldKey.currentState!.isDrawerOpen ||
-                              scaffoldKey.currentState!.isEndDrawerOpen) {
-                            Navigator.pop(context);
-                          }
-                        },
-                        child: ListTile(
-                          leading: Icon(
-                            Icons.book,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 25.0,
-                          ),
-                          title: Text(
-                            'Temario',
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Outfit',
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                          ),
-                          tileColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          dense: false,
-                        ),
+                    FlutterFlowIconButton(
+                      borderColor: const Color(0x004B39EF),
+                      borderRadius: 0.0,
+                      borderWidth: 1.0,
+                      buttonSize: 60.0,
+                      fillColor: const Color(0xFF1B2026),
+                      icon: Icon(
+                        Icons.book,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 40.0,
                       ),
+                      onPressed: () async {
+                        setState(() {});
+                        if (scaffoldKey.currentState!.isDrawerOpen ||
+                            scaffoldKey.currentState!.isEndDrawerOpen) {
+                          Navigator.pop(context);
+                        }
+
+                        context.pushNamed('Planet');
+                      },
                     ),
-                    Align(
-                      alignment: const AlignmentDirectional(1.0, 0.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          setState(() {});
-                          if (scaffoldKey.currentState!.isDrawerOpen ||
-                              scaffoldKey.currentState!.isEndDrawerOpen) {
-                            Navigator.pop(context);
-                          }
-                        },
-                        child: ListTile(
-                          leading: Icon(
-                            Icons.support_agent_outlined,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 25.0,
-                          ),
-                          title: Text(
-                            'Call Support',
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Outfit',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  fontSize: 20.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                          ),
-                          tileColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          dense: false,
-                        ),
+                    FlutterFlowIconButton(
+                      borderColor: const Color(0x004B39EF),
+                      borderRadius: 0.0,
+                      borderWidth: 1.0,
+                      buttonSize: 60.0,
+                      fillColor: const Color(0xFF1B2026),
+                      icon: Icon(
+                        Icons.support_agent_sharp,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 40.0,
                       ),
+                      onPressed: () async {
+                        setState(() {});
+                        if (scaffoldKey.currentState!.isDrawerOpen ||
+                            scaffoldKey.currentState!.isEndDrawerOpen) {
+                          Navigator.pop(context);
+                        }
+                      },
                     ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, -1.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          setState(() {});
-                          if (scaffoldKey.currentState!.isDrawerOpen ||
-                              scaffoldKey.currentState!.isEndDrawerOpen) {
-                            Navigator.pop(context);
-                          }
-                        },
-                        child: ListTile(
-                          leading: Icon(
-                            Icons.chat_bubble_outline,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 25.0,
-                          ),
-                          title: Text(
-                            'Feedback',
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Outfit',
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                          ),
-                          tileColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          dense: false,
-                        ),
+                    FlutterFlowIconButton(
+                      borderColor: const Color(0x004B39EF),
+                      borderRadius: 0.0,
+                      borderWidth: 1.0,
+                      buttonSize: 60.0,
+                      fillColor: const Color(0xFF1B2026),
+                      icon: Icon(
+                        Icons.chat_bubble_outline_sharp,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 40.0,
                       ),
+                      onPressed: () async {
+                        setState(() {});
+                        if (scaffoldKey.currentState!.isDrawerOpen ||
+                            scaffoldKey.currentState!.isEndDrawerOpen) {
+                          Navigator.pop(context);
+                        }
+                      },
                     ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, -1.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          setState(() {});
-                          if (scaffoldKey.currentState!.isDrawerOpen ||
-                              scaffoldKey.currentState!.isEndDrawerOpen) {
-                            Navigator.pop(context);
-                          }
-                        },
-                        child: ListTile(
-                          leading: Icon(
-                            Icons.settings_outlined,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 25.0,
-                          ),
-                          title: Text(
-                            'Settings',
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Outfit',
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                          ),
-                          tileColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          dense: false,
-                        ),
+                    FlutterFlowIconButton(
+                      borderColor: const Color(0x004B39EF),
+                      borderRadius: 0.0,
+                      borderWidth: 1.0,
+                      buttonSize: 60.0,
+                      fillColor: const Color(0xFF1B2026),
+                      icon: Icon(
+                        Icons.settings_outlined,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 40.0,
                       ),
+                      onPressed: () async {
+                        setState(() {});
+                        if (scaffoldKey.currentState!.isDrawerOpen ||
+                            scaffoldKey.currentState!.isEndDrawerOpen) {
+                          Navigator.pop(context);
+                        }
+                      },
                     ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, -1.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          setState(() {});
-                          if (scaffoldKey.currentState!.isDrawerOpen ||
-                              scaffoldKey.currentState!.isEndDrawerOpen) {
-                            Navigator.pop(context);
-                          }
-                        },
-                        child: ListTile(
-                          leading: Icon(
-                            Icons.help_outline,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 25.0,
-                          ),
-                          title: Text(
-                            'Help',
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Outfit',
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                          ),
-                          tileColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          dense: false,
-                        ),
+                    FlutterFlowIconButton(
+                      borderColor: const Color(0x004B39EF),
+                      borderRadius: 0.0,
+                      borderWidth: 1.0,
+                      buttonSize: 60.0,
+                      fillColor: const Color(0xFF1B2026),
+                      icon: Icon(
+                        Icons.help,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 40.0,
                       ),
+                      onPressed: () async {
+                        setState(() {});
+                        if (scaffoldKey.currentState!.isDrawerOpen ||
+                            scaffoldKey.currentState!.isEndDrawerOpen) {
+                          Navigator.pop(context);
+                        }
+                      },
                     ),
                   ],
                 ),
@@ -416,7 +322,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 0.15,
                 decoration: const BoxDecoration(
-                  color: Color(0xFF041538),
+                  color: Color(0xFF1B2026),
                 ),
                 child: Align(
                   alignment: const AlignmentDirectional(-1.0, -1.0),
@@ -459,26 +365,29 @@ class _HomePageWidgetState extends State<HomePageWidget>
           iconTheme:
               IconThemeData(color: FlutterFlowTheme.of(context).secondary),
           automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderRadius: 20.0,
-            borderWidth: 1.0,
-            buttonSize: 40.0,
-            fillColor: const Color(0x2439D2C0),
-            icon: Icon(
-              Icons.menu_rounded,
-              color: FlutterFlowTheme.of(context).primary,
-              size: 24.0,
+          leading: Opacity(
+            opacity: 0.5,
+            child: FlutterFlowIconButton(
+              borderRadius: 20.0,
+              borderWidth: 1.0,
+              buttonSize: 40.0,
+              fillColor: const Color(0xFF1B2026),
+              icon: Icon(
+                Icons.menu_rounded,
+                color: FlutterFlowTheme.of(context).secondaryBackground,
+                size: 24.0,
+              ),
+              onPressed: () async {
+                // Open Drawer
+                scaffoldKey.currentState!.openDrawer();
+              },
             ),
-            onPressed: () async {
-              // Open Drawer
-              scaffoldKey.currentState!.openDrawer();
-            },
           ),
           title: Text(
             'Home',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
+            style: FlutterFlowTheme.of(context).displaySmall.override(
                   fontFamily: 'Outfit',
-                  color: FlutterFlowTheme.of(context).primary,
+                  color: const Color(0xFF9EA6AB),
                   letterSpacing: 0.0,
                 ),
           ),

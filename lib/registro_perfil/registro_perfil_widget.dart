@@ -55,7 +55,7 @@ class _RegistroPerfilWidgetState extends State<RegistroPerfilWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF041538),
+        backgroundColor: const Color(0xFF1F232A),
         body: SafeArea(
           top: true,
           child: Row(
@@ -67,7 +67,7 @@ class _RegistroPerfilWidgetState extends State<RegistroPerfilWidget> {
                   width: 100.0,
                   height: double.infinity,
                   decoration: const BoxDecoration(
-                    color: Color(0xFF041538),
+                    color: Color(0xFF1F232A),
                   ),
                   alignment: const AlignmentDirectional(0.0, -1.0),
                   child: SingleChildScrollView(
@@ -79,7 +79,7 @@ class _RegistroPerfilWidgetState extends State<RegistroPerfilWidget> {
                           width: double.infinity,
                           height: 140.0,
                           decoration: const BoxDecoration(
-                            color: Color(0xFF041538),
+                            color: Color(0xFF1B2026),
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(16.0),
                               bottomRight: Radius.circular(16.0),
