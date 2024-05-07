@@ -610,7 +610,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                         borderRadius: 20.0,
                         borderWidth: 1.0,
                         buttonSize: 48.0,
-                        fillColor: const Color(0x1AFFFFFF),
+                        fillColor: FlutterFlowTheme.of(context).primaryText,
                         icon: Icon(
                           Icons.close,
                           color:
@@ -1086,19 +1086,24 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            SelectionArea(
-                                                child: Text(
-                                              'MARCADO Y ESTRUCTURADO',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.white,
-                                                        fontSize: 20.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            )),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 50.0),
+                                              child: SelectionArea(
+                                                  child: Text(
+                                                'MARCADO Y ESTRUCTURADO',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: Colors.white,
+                                                          fontSize: 20.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              )),
+                                            ),
                                           ],
                                         ),
                                       ],
@@ -1114,7 +1119,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                             alignment: const AlignmentDirectional(0.01, 0.71),
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 30.0, 0.0, 0.0),
+                                  0.0, 50.0, 0.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: SvgPicture.asset(
@@ -1508,7 +1513,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                               animationsMap['containerOnPageLoadAnimation4']!),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
+                                0.0, 50.0, 0.0, 0.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: SvgPicture.asset(
@@ -1725,7 +1730,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
                                             )),
                                             SelectionArea(
                                                 child: Text(
-                                              '-145°C',
+                                              '?',
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium

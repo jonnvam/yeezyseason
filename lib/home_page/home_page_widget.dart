@@ -1,13 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/components/quiz_sets_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -123,91 +124,213 @@ class _HomePageWidgetState extends State<HomePageWidget>
             children: [
               Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 0.2,
+                height: MediaQuery.sizeOf(context).height * 0.25,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   border: Border.all(
                     color: Colors.black,
                   ),
                 ),
-                child: Row(
+                child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(88.0, 0.0, 88.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Container(
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                      child: AuthUserStreamWidget(
+                        builder: (context) => InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            final selectedMedia =
+                                await selectMediaWithSourceBottomSheet(
+                              context: context,
+                              maxWidth: 800.00,
+                              maxHeight: 800.00,
+                              allowPhoto: true,
+                            );
+                            if (selectedMedia != null &&
+                                selectedMedia.every((m) => validateFileFormat(
+                                    m.storagePath, context))) {
+                              setState(() => _model.isDataUploading = true);
+                              var selectedUploadedFiles = <FFUploadedFile>[];
+
+                              var downloadUrls = <String>[];
+                              try {
+                                selectedUploadedFiles = selectedMedia
+                                    .map((m) => FFUploadedFile(
+                                          name: m.storagePath.split('/').last,
+                                          bytes: m.bytes,
+                                          height: m.dimensions?.height,
+                                          width: m.dimensions?.width,
+                                          blurHash: m.blurHash,
+                                        ))
+                                    .toList();
+
+                                downloadUrls = (await Future.wait(
+                                  selectedMedia.map(
+                                    (m) async => await uploadData(
+                                        m.storagePath, m.bytes),
+                                  ),
+                                ))
+                                    .where((u) => u != null)
+                                    .map((u) => u!)
+                                    .toList();
+                              } finally {
+                                _model.isDataUploading = false;
+                              }
+                              if (selectedUploadedFiles.length ==
+                                      selectedMedia.length &&
+                                  downloadUrls.length == selectedMedia.length) {
+                                setState(() {
+                                  _model.uploadedLocalFile =
+                                      selectedUploadedFiles.first;
+                                  _model.uploadedFileUrl = downloadUrls.first;
+                                });
+                              } else {
+                                setState(() {});
+                                return;
+                              }
+                            }
+
+                            await currentUserReference!
+                                .update(createUsersRecordData(
+                              photoUrl: '',
+                            ));
+                          },
+                          child: Container(
                             width: 120.0,
                             height: 120.0,
                             clipBehavior: Clip.antiAlias,
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: SvgPicture.asset(
-                              'assets/images/user-svgrepo-com.svg',
+                            child: Image.network(
+                              currentUserPhoto,
                               fit: BoxFit.cover,
                             ),
                           ),
-                        ],
+                        ),
+                      ),
+                    ),
+                    AuthUserStreamWidget(
+                      builder: (context) => Text(
+                        currentUserDisplayName,
+                        style: FlutterFlowTheme.of(context).titleLarge.override(
+                              fontFamily: 'Outfit',
+                              letterSpacing: 0.0,
+                            ),
                       ),
                     ),
                   ],
                 ),
               ),
-              Container(
-                width: 333.0,
-                height: 45.0,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      FlutterFlowTheme.of(context).error,
-                      FlutterFlowTheme.of(context).accent1
-                    ],
-                    stops: const [0.0, 1.0],
-                    begin: const AlignmentDirectional(-1.0, 0.0),
-                    end: const AlignmentDirectional(1.0, 0),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: MediaQuery.sizeOf(context).height * 0.6,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.workspace_premium_outlined,
-                    color: FlutterFlowTheme.of(context).alternate,
-                  ),
-                  title: Text(
-                    'Get premium benefits',
-                    style: FlutterFlowTheme.of(context).titleLarge.override(
-                          fontFamily: 'Outfit',
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                          fontSize: 18.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.normal,
+                  child: ListView(
+                    padding: EdgeInsets.zero,
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: FlutterFlowIconButton(
+                          borderColor: const Color(0x004B39EF),
+                          borderRadius: 0.0,
+                          borderWidth: 1.0,
+                          buttonSize: 60.0,
+                          fillColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          icon: Icon(
+                            Icons.book,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 40.0,
+                          ),
+                          onPressed: () async {
+                            setState(() {});
+                            if (scaffoldKey.currentState!.isDrawerOpen ||
+                                scaffoldKey.currentState!.isEndDrawerOpen) {
+                              Navigator.pop(context);
+                            }
+
+                            context.pushNamed('Temario');
+                          },
                         ),
-                  ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: FlutterFlowTheme.of(context).primaryBackground,
-                    size: 20.0,
-                  ),
-                  tileColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  dense: false,
-                ),
-              ),
-              Container(
-                width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 0.65,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  scrollDirection: Axis.vertical,
-                  children: [
-                    Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
-                      child: FlutterFlowIconButton(
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Container(
+                            width: 304.0,
+                            height: 60.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  50.0, 0.0, 50.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Flexible(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          30.0, 0.0, 50.0, 0.0),
+                                      child: FlutterFlowIconButton(
+                                        borderRadius: 20.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 60.0,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        icon: Icon(
+                                          Icons.light_mode,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 40.0,
+                                        ),
+                                        onPressed: () async {
+                                          setDarkModeSetting(
+                                              context, ThemeMode.light);
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        50.0, 0.0, 30.0, 0.0),
+                                    child: FlutterFlowIconButton(
+                                      borderRadius: 20.0,
+                                      borderWidth: 1.0,
+                                      buttonSize: 60.0,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      icon: Icon(
+                                        Icons.dark_mode_outlined,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 40.0,
+                                      ),
+                                      onPressed: () async {
+                                        setDarkModeSetting(
+                                            context, ThemeMode.dark);
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      FlutterFlowIconButton(
                         borderColor: const Color(0x004B39EF),
                         borderRadius: 0.0,
                         borderWidth: 1.0,
@@ -215,102 +338,46 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         fillColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
                         icon: Icon(
-                          Icons.book,
+                          Icons.import_contacts_rounded,
                           color: FlutterFlowTheme.of(context).primaryText,
                           size: 40.0,
                         ),
                         onPressed: () async {
                           setState(() {});
+
+                          context.pushNamed('Planet');
+
                           if (scaffoldKey.currentState!.isDrawerOpen ||
                               scaffoldKey.currentState!.isEndDrawerOpen) {
                             Navigator.pop(context);
                           }
-
-                          context.pushNamed('Planet');
                         },
                       ),
-                    ),
-                    FlutterFlowIconButton(
-                      borderColor: const Color(0x004B39EF),
-                      borderRadius: 0.0,
-                      borderWidth: 1.0,
-                      buttonSize: 60.0,
-                      fillColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      icon: Icon(
-                        Icons.support_agent_sharp,
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        size: 40.0,
+                      FlutterFlowIconButton(
+                        borderColor: const Color(0x004B39EF),
+                        borderRadius: 0.0,
+                        borderWidth: 1.0,
+                        buttonSize: 60.0,
+                        fillColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        icon: Icon(
+                          Icons.chat_bubble_outline_sharp,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          size: 40.0,
+                        ),
+                        onPressed: () async {
+                          setState(() {});
+
+                          context.pushNamed('ticket');
+
+                          if (scaffoldKey.currentState!.isDrawerOpen ||
+                              scaffoldKey.currentState!.isEndDrawerOpen) {
+                            Navigator.pop(context);
+                          }
+                        },
                       ),
-                      onPressed: () async {
-                        setState(() {});
-                        if (scaffoldKey.currentState!.isDrawerOpen ||
-                            scaffoldKey.currentState!.isEndDrawerOpen) {
-                          Navigator.pop(context);
-                        }
-                      },
-                    ),
-                    FlutterFlowIconButton(
-                      borderColor: const Color(0x004B39EF),
-                      borderRadius: 0.0,
-                      borderWidth: 1.0,
-                      buttonSize: 60.0,
-                      fillColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      icon: Icon(
-                        Icons.chat_bubble_outline_sharp,
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        size: 40.0,
-                      ),
-                      onPressed: () async {
-                        setState(() {});
-                        if (scaffoldKey.currentState!.isDrawerOpen ||
-                            scaffoldKey.currentState!.isEndDrawerOpen) {
-                          Navigator.pop(context);
-                        }
-                      },
-                    ),
-                    FlutterFlowIconButton(
-                      borderColor: const Color(0x004B39EF),
-                      borderRadius: 0.0,
-                      borderWidth: 1.0,
-                      buttonSize: 60.0,
-                      fillColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      icon: Icon(
-                        Icons.settings_outlined,
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        size: 40.0,
-                      ),
-                      onPressed: () async {
-                        setState(() {});
-                        if (scaffoldKey.currentState!.isDrawerOpen ||
-                            scaffoldKey.currentState!.isEndDrawerOpen) {
-                          Navigator.pop(context);
-                        }
-                      },
-                    ),
-                    FlutterFlowIconButton(
-                      borderColor: const Color(0x004B39EF),
-                      borderRadius: 0.0,
-                      borderWidth: 1.0,
-                      buttonSize: 60.0,
-                      fillColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      icon: Icon(
-                        Icons.help,
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        size: 40.0,
-                      ),
-                      onPressed: () async {
-                        setState(() {});
-                        if (scaffoldKey.currentState!.isDrawerOpen ||
-                            scaffoldKey.currentState!.isEndDrawerOpen) {
-                          Navigator.pop(context);
-                        }
-                      },
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Container(
@@ -355,7 +422,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
           ),
         ),
         appBar: AppBar(
-          backgroundColor: const Color(0x1AFFFFFF),
+          backgroundColor: FlutterFlowTheme.of(context).secondaryText,
           iconTheme:
               IconThemeData(color: FlutterFlowTheme.of(context).secondary),
           automaticallyImplyLeading: false,
@@ -365,7 +432,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
               borderRadius: 20.0,
               borderWidth: 1.0,
               buttonSize: 40.0,
-              fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+              fillColor: FlutterFlowTheme.of(context).primaryBtnText,
               icon: Icon(
                 Icons.menu_rounded,
                 color: FlutterFlowTheme.of(context).secondaryText,

@@ -156,6 +156,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'forgotContra',
           path: '/forgotContra',
           builder: (context, params) => const ForgotContraWidget(),
+        ),
+        FFRoute(
+          name: 'Temario',
+          path: '/temario',
+          builder: (context, params) => const TemarioWidget(),
+        ),
+        FFRoute(
+          name: 'ticket',
+          path: '/ticket',
+          builder: (context, params) => const TicketWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

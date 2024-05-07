@@ -1,4 +1,4 @@
-# LogiStudied
+# LogiStudio
 
 A new Flutter project.
 

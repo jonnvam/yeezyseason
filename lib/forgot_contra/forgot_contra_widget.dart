@@ -43,36 +43,32 @@ class _ForgotContraWidgetState extends State<ForgotContraWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryText,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30.0,
           borderWidth: 1.0,
           buttonSize: 60.0,
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_rounded,
-            color: FlutterFlowTheme.of(context).primaryText,
+            color: Colors.white,
             size: 30.0,
           ),
           onPressed: () async {
-            context.pushNamed('Login');
+            context.pop();
           },
         ),
-        title: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
-          child: Text(
-            'Back',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Outfit',
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  letterSpacing: 0.0,
-                ),
-          ),
+        title: Text(
+          'LogiStudio',
+          style: FlutterFlowTheme.of(context).headlineLarge.override(
+                fontFamily: 'Outfit',
+                letterSpacing: 0.0,
+              ),
         ),
         actions: const [],
-        centerTitle: false,
-        elevation: 0.0,
+        centerTitle: true,
+        elevation: 2.0,
       ),
       body: Align(
         alignment: const AlignmentDirectional(0.0, -1.0),
@@ -260,6 +256,7 @@ class _ForgotContraWidgetState extends State<ForgotContraWidget> {
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Readex Pro',
+                                  color: FlutterFlowTheme.of(context).secondary,
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,

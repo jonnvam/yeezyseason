@@ -164,16 +164,6 @@ class _SplashWidgetState extends State<SplashWidget> {
                       ],
                     ),
                   ),
-                  const Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [],
-                    ),
-                  ),
                 ],
               ),
             ),
